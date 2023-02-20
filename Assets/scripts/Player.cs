@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float jumpHeight;
     private Rigidbody2D r2d;
     private bool onGround;
+    public GameObject swordPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +22,7 @@ public class Player : MonoBehaviour
         Vector2 newPosition = this.transform.position + new Vector3(speed*Time.deltaTime, 0f, 0f);
         this.transform.position = newPosition;
         if(Input.GetButtonDown("Jump") && onGround == true){
-            //Instantiate(playerPrefab, this.transform.position + new Vector3(10f, 0f, 0f), Quaternion.identity);
-            Vector2 jumpVec = new Vector2();
-            jumpVec.y = jumpHeight;
-            r2d.AddForce(jumpVec);
+            Instantiate(swordPrefab, this.transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
         }
     }
 
