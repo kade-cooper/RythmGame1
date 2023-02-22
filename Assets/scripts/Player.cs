@@ -10,9 +10,11 @@ public class Player : MonoBehaviour
     private Rigidbody2D r2d;
     private bool onGround;
     public GameObject swordPrefab;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         r2d = this.GetComponent<Rigidbody2D>();
     }
 
@@ -22,7 +24,11 @@ public class Player : MonoBehaviour
         Vector2 newPosition = this.transform.position + new Vector3(speed*Time.deltaTime, 0f, 0f);
         this.transform.position = newPosition;
         if(Input.GetButtonDown("Jump") && onGround == true){
+            animator.SetBool("Attacking", true);
             Instantiate(swordPrefab, this.transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
+        }
+        else{
+            animator.SetBool("Attacking", false);
         }
     }
 
