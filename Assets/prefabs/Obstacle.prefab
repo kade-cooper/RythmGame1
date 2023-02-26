@@ -138,3 +138,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  score: 200
+  player: {fileID: 4878440952078737944, guid: e1bc772b61700d24a87a8dc5eb0f4448, type: 3}

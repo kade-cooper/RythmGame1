@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class Player : MonoBehaviour
     private bool onGround;
     public GameObject swordPrefab;
     private Animator animator;
+    public TextMeshProUGUI scoreTxt;
+    private int score;
     // Start is called before the first frame update
     void Start()
     {
+        scoreTxt.text = "Score: " + score.ToString();
         animator = GetComponent<Animator>();
         r2d = this.GetComponent<Rigidbody2D>();
     }
@@ -23,15 +27,17 @@ public class Player : MonoBehaviour
     {
         Vector2 newPosition = this.transform.position + new Vector3(speed*Time.deltaTime, 0f, 0f);
         this.transform.position = newPosition;
-        if(Input.GetButtonDown("Jump") && onGround == true){
+        if(Input.GetButtonDown("Jump")){
             animator.SetBool("Attacking", true);
             Instantiate(swordPrefab, this.transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
+            score-=100;
+            scoreTxt.text = "Score: " + score.ToString();
         }
         else{
             animator.SetBool("Attacking", false);
         }
     }
-
+/*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Ground"))
@@ -44,6 +50,12 @@ public class Player : MonoBehaviour
         {
             onGround = false;
         }
+    }
+*/
+    public void AddScore(int addition){
+        //Debug.Log("i run");
+        score+=addition;
+        scoreTxt.text = "Score: " + score.ToString();
     }
 
     public void Respawn(){
