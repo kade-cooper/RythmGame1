@@ -26,7 +26,7 @@ public class basicEnemy : MonoBehaviour
             if(health <= 0){
                 GameObject player = GameObject.Find("Hat");
                 player.SendMessage("AddScore",score+100);
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
             }
             //gameUI.SendMessage("addPoint", SendMessageOptions.DontRequireReceiver);
         }

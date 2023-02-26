@@ -14,6 +14,9 @@ public class Player : MonoBehaviour
     private Animator animator;
     public TextMeshProUGUI scoreTxt;
     private int score;
+    public int health;
+    public int maxhealth;
+    public GameObject[] enemies;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +61,25 @@ public class Player : MonoBehaviour
         scoreTxt.text = "Score: " + score.ToString();
     }
 
+    public void SubScore(){
+        //Debug.Log("i run");
+        score-=300;
+        scoreTxt.text = "Score: " + score.ToString();
+    }
+
     public void Respawn(){
-        this.transform.position = new Vector2(-8,-3);
+        health-=1;
+        SubScore();
+        if(health==0){
+            enemies = GameObject.FindGameObjectsWithTag("enemy");
+            foreach(GameObject enemy in enemies){
+                Debug.Log("i run");
+                enemy.gameObject.SetActive(true);
+            }
+            this.transform.position = new Vector2(-8,-3);
+            score=0;
+            scoreTxt.text = "Score: " + score.ToString();
+            health=maxhealth;
+        }
     }
 }

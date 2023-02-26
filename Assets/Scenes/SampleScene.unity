@@ -900,9 +900,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5724882045160034514, guid: e1bc772b61700d24a87a8dc5eb0f4448, type: 3}
+      propertyPath: health
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5724882045160034514, guid: e1bc772b61700d24a87a8dc5eb0f4448, type: 3}
       propertyPath: scoreTxt
       value: 
       objectReference: {fileID: 1915672020}
+    - target: {fileID: 5724882045160034514, guid: e1bc772b61700d24a87a8dc5eb0f4448, type: 3}
+      propertyPath: maxhealth
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1bc772b61700d24a87a8dc5eb0f4448, type: 3}
 --- !u!1001 &7797874231769588189
@@ -962,7 +970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7797874232137642258, guid: 09a13e6e59fdb654cb2d01906ecd7af9, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09a13e6e59fdb654cb2d01906ecd7af9, type: 3}

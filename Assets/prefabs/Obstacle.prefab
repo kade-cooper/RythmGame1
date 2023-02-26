@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6259115503996146209}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,4 +139,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   score: 200
-  player: {fileID: 4878440952078737944, guid: e1bc772b61700d24a87a8dc5eb0f4448, type: 3}

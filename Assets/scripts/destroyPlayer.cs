@@ -18,6 +18,7 @@ public class destroyPlayer : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Player")){
+            this.gameObject.SetActive(false);
             other.gameObject.SendMessage("Respawn");
             //Destroy(other.gameObject);
         }
