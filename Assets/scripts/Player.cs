@@ -37,11 +37,18 @@ public class Player : MonoBehaviour
             score-=100;
             scoreTxt.text = "Score: " + score.ToString();
         }
+        else if(Input.GetButtonDown("Fire1") && onGround==true){
+            animator.SetBool("Attacking", true);
+            r2d.AddForce(new Vector3(0,jumpHeight,0));
+            //Instantiate(swordPrefab, this.transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
+            //score-=100;
+            scoreTxt.text = "Score: " + score.ToString();
+        }
         else{
             animator.SetBool("Attacking", false);
         }
     }
-/*
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Ground"))
@@ -55,7 +62,7 @@ public class Player : MonoBehaviour
             onGround = false;
         }
     }
-*/
+
     public void AddScore(int addition){
         //Debug.Log("i run");
         score+=addition;
