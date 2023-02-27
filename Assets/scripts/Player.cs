@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Player : MonoBehaviour
 {
-
+    public Image healthBar;
     public float speed;
     public float jumpHeight;
     private Rigidbody2D r2d;
@@ -14,9 +15,9 @@ public class Player : MonoBehaviour
     private Animator animator;
     public TextMeshProUGUI scoreTxt;
     private int score;
-    public int health;
-    public int maxhealth;
-    public GameObject[] enemies;
+    public float health;
+    public float maxhealth;
+    public GameObject[] all;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,17 +70,25 @@ public class Player : MonoBehaviour
 
     public void Respawn(){
         health-=1;
+        healthBar.fillAmount = health/maxhealth;
         SubScore();
         if(health==0){
+            all = Resources.FindObjectsOfTypeAll<GameObject>();
+            foreach(GameObject obj in all){
+                obj.SetActive(true);
+            }
+            /*
             enemies = GameObject.FindGameObjectsWithTag("enemy");
             foreach(GameObject enemy in enemies){
                 Debug.Log("i run");
                 enemy.gameObject.SetActive(true);
             }
+            */
             this.transform.position = new Vector2(-8,-3);
             score=0;
             scoreTxt.text = "Score: " + score.ToString();
             health=maxhealth;
+            healthBar.fillAmount = health/maxhealth;
         }
     }
 }

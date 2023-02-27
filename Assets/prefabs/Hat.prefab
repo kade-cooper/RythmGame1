@@ -299,10 +299,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb1a24300f2a3e4b969f4845f90f4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   speed: 4
   jumpHeight: 300
   swordPrefab: {fileID: 6946435661994582629, guid: 32b41c3b9b5132343bc40217d4c3f42a, type: 3}
   scoreTxt: {fileID: 0}
+  health: 0
+  maxhealth: 0
+  all: []
 --- !u!1 &4952003811614492177
 GameObject:
   m_ObjectHideFlags: 0
