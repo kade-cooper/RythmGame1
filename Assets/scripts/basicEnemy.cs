@@ -6,6 +6,7 @@ public class basicEnemy : MonoBehaviour
 {
     public int health;
     public int score;
+    public GameObject electricExplosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class basicEnemy : MonoBehaviour
             if(health <= 0){
                 GameObject player = GameObject.Find("Hat");
                 player.SendMessage("AddScore",score+100);
+                Instantiate(electricExplosion, this.transform.position, Quaternion.identity);
                 this.gameObject.SetActive(false);
             }
             //gameUI.SendMessage("addPoint", SendMessageOptions.DontRequireReceiver);
