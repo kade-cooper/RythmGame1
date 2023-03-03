@@ -512,6 +512,8 @@ MonoBehaviour:
   health: 1
   score: 200
   electricExplosion: {fileID: 8188791287615690096, guid: 708309ff0720a93479ec9aa2559ba823, type: 3}
+  color: 0
+  bnw: {fileID: 1815760051632899912, guid: 9dd6e8777e5d66a468aa2e7c883d9a3f, type: 3}
 --- !u!114 &-4527257754109170156
 MonoBehaviour:
   m_ObjectHideFlags: 0

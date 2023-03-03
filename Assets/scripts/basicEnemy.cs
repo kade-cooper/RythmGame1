@@ -7,6 +7,8 @@ public class basicEnemy : MonoBehaviour
     public int health;
     public int score;
     public GameObject electricExplosion;
+    public bool color;
+    public GameObject bnw;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,8 @@ public class basicEnemy : MonoBehaviour
                 GameObject player = GameObject.Find("Hat");
                 player.SendMessage("AddScore",score+100);
                 Instantiate(electricExplosion, this.transform.position, Quaternion.identity);
+                if(!color){bnw.SetActive(true);}
+                else{bnw.SetActive(false);}
                 this.gameObject.SetActive(false);
             }
             //gameUI.SendMessage("addPoint", SendMessageOptions.DontRequireReceiver);
