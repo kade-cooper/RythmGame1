@@ -32,7 +32,8 @@ public class basicEnemy : MonoBehaviour
                 Instantiate(electricExplosion, this.transform.position, Quaternion.identity);
                 if(!color){bnw.SetActive(true);}
                 else{bnw.SetActive(false);}
-                this.gameObject.SetActive(false);
+                Destroy(this.gameObject);
+                //this.gameObject.SetActive(false);
             }
             //gameUI.SendMessage("addPoint", SendMessageOptions.DontRequireReceiver);
         }

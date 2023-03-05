@@ -80,11 +80,12 @@ public class Player : MonoBehaviour
         healthBar.fillAmount = health/maxhealth;
         SubScore();
         if(health==0){
+            /*
             all = Resources.FindObjectsOfTypeAll<GameObject>();
             foreach(GameObject obj in all){
                 obj.SetActive(true);
             }
-            /*
+            
             enemies = GameObject.FindGameObjectsWithTag("enemy");
             foreach(GameObject enemy in enemies){
                 Debug.Log("i run");

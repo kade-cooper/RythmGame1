@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class animToMusic : MonoBehaviour
+public class spawnToMusic : MonoBehaviour
 {
 	public AudioSource audioSource;
 	public float updateStep = 0.01f;
@@ -18,6 +18,8 @@ public class animToMusic : MonoBehaviour
 
 	public float minSize = 40;
 	public float maxSize = 50;
+	public GameObject enemy;
+	public float volumeToSpawn;
 
 	private void Awake()
 	{
@@ -40,13 +42,16 @@ public class animToMusic : MonoBehaviour
 
 			clipLoudness *= sizeFactor;
 			clipLoudness = Mathf.Clamp(clipLoudness, 0, maxSize);
-            foreach(GameObject sprite in sprites){
-                //Debug.Log(clipLoudness);
-                if(clipLoudness<minSize){
-                    clipLoudness+=minSize;
-                }
-			    sprite.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
+			//Debug.Log(clipLoudness);
+            if(clipLoudness>=volumeToSpawn){
+                Instantiate(enemy,this.transform.position,Quaternion.Euler(0,-110,0));
             }
         }
+	}
+
+	public void changeAttributes(float[] updateVTS){
+		Debug.Log("I run");
+		updateStep=updateVTS[0];
+		volumeToSpawn=updateVTS[1];
 	}
 }
