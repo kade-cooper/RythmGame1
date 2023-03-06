@@ -9,6 +9,7 @@ public class basicEnemy : MonoBehaviour
     public GameObject electricExplosion;
     public bool color;
     public GameObject bnw;
+    public Vector3 offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class basicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(this.gameObject, 6f);
     }
 
     public void OnTriggerEnter2D(Collider2D other){
@@ -29,7 +30,7 @@ public class basicEnemy : MonoBehaviour
             if(health <= 0){
                 GameObject player = GameObject.Find("Hat");
                 player.SendMessage("AddScore",score+100);
-                Instantiate(electricExplosion, this.transform.position, Quaternion.identity);
+                Instantiate(electricExplosion, this.transform.position + offset, Quaternion.identity);
                 if(!color){bnw.SetActive(true);}
                 else{bnw.SetActive(false);}
                 Destroy(this.gameObject);

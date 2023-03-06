@@ -18,7 +18,7 @@ public class spawnToMusic : MonoBehaviour
 
 	public float minSize = 40;
 	public float maxSize = 50;
-	public GameObject enemy;
+	public GameObject[] enemies;
 	public float volumeToSpawn;
 
 	private void Awake()
@@ -44,7 +44,8 @@ public class spawnToMusic : MonoBehaviour
 			clipLoudness = Mathf.Clamp(clipLoudness, 0, maxSize);
 			Debug.Log(clipLoudness);
             if(clipLoudness>=volumeToSpawn){
-                Instantiate(enemy,this.transform.position,Quaternion.Euler(0,-110,0));
+				int rand = Random.Range(0,enemies.Length);
+                Instantiate(enemies[rand],this.transform.position,Quaternion.Euler(0,-110,0));
             }
         }
 	}
