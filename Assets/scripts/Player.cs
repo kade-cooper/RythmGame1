@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private int score;
     public float health;
     public float maxhealth;
-    public GameObject[] enemies;
+    public GameObject[] all;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,13 +85,13 @@ public class Player : MonoBehaviour
             foreach(GameObject obj in all){
                 obj.SetActive(true);
             }
-            */
+            
             enemies = GameObject.FindGameObjectsWithTag("enemy");
             foreach(GameObject enemy in enemies){
                 Debug.Log("i run");
-                Destroy(enemy.gameObject);
+                enemy.gameObject.SetActive(true);
             }
-            
+            */
             this.transform.position = new Vector2(-8,-3);
             score=0;
             scoreTxt.text = "Score: " + score.ToString();
