@@ -42,7 +42,7 @@ public class spawnToMusic : MonoBehaviour
 
 			clipLoudness *= sizeFactor;
 			clipLoudness = Mathf.Clamp(clipLoudness, 0, maxSize);
-			//Debug.Log(clipLoudness);
+			Debug.Log(clipLoudness);
             if(clipLoudness>=volumeToSpawn){
                 Instantiate(enemy,this.transform.position,Quaternion.Euler(0,-110,0));
             }
@@ -50,7 +50,7 @@ public class spawnToMusic : MonoBehaviour
 	}
 
 	public void changeAttributes(float[] updateVTS){
-		Debug.Log("I run");
+		//Debug.Log("I run");
 		updateStep=updateVTS[0];
 		volumeToSpawn=updateVTS[1];
 	}

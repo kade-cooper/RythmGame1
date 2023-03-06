@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         this.transform.position = newPosition;
         if(Input.GetButtonDown("Jump")){
             animator.SetBool("Attacking", true);
-            Instantiate(swordPrefab, this.transform.position + new Vector3(1f, 0f, 0f), Quaternion.identity);
+            Instantiate(swordPrefab, this.transform.position + new Vector3(2f, 0.5f, 0f), Quaternion.identity);
             score-=100;
             scoreTxt.text = "Score: " + score.ToString();
         }
