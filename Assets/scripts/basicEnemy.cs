@@ -29,7 +29,9 @@ public class basicEnemy : MonoBehaviour
             health-=1;
             if(health <= 0){
                 GameObject player = GameObject.Find("Hat");
+                GameObject camera = GameObject.Find("Camera");
                 player.SendMessage("AddScore",score+100);
+                camera.SendMessage("beginShake");
                 Instantiate(electricExplosion, this.transform.position + offset, Quaternion.identity);
                 if(!color){bnw.SetActive(true);}
                 else{bnw.SetActive(false);}
