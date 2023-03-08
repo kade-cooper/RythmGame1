@@ -14,6 +14,7 @@ public class animToMusic : MonoBehaviour
 	private float[] clipSampleData;
 
 	public GameObject[] sprites;
+	public bool animEnemies = false;
 	public float sizeFactor = 0;
 
 	public float minSize = 40;
@@ -40,6 +41,16 @@ public class animToMusic : MonoBehaviour
 
 			clipLoudness *= sizeFactor;
 			clipLoudness = Mathf.Clamp(clipLoudness, 0, maxSize);
+			GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+			if(animEnemies){
+				foreach(GameObject enemy in enemies){
+                //Debug.Log(clipLoudness);
+                if(clipLoudness<minSize){
+                    clipLoudness+=minSize;
+                }
+			    enemy.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
+            }
+			}
             foreach(GameObject sprite in sprites){
                 //Debug.Log(clipLoudness);
                 if(clipLoudness<minSize){

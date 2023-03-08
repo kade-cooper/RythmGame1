@@ -799,6 +799,7 @@ MonoBehaviour:
   clipLoudness: 0
   sprites:
   - {fileID: 610765891}
+  animEnemies: 0
   sizeFactor: 1
   minSize: 4
   maxSize: 6
@@ -2274,6 +2275,18 @@ PrefabInstance:
     - target: {fileID: 763663052072129910, guid: 152fe039b0edbd84da1a33d8c44b1d12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 763663052072129911, guid: 152fe039b0edbd84da1a33d8c44b1d12, type: 3}
+      propertyPath: maxSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 763663052072129911, guid: 152fe039b0edbd84da1a33d8c44b1d12, type: 3}
+      propertyPath: minSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 763663052072129911, guid: 152fe039b0edbd84da1a33d8c44b1d12, type: 3}
+      propertyPath: animEnemies
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 763663052072129911, guid: 152fe039b0edbd84da1a33d8c44b1d12, type: 3}
       propertyPath: audioSource
