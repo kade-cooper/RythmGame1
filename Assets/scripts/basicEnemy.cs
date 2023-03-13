@@ -10,6 +10,7 @@ public class basicEnemy : MonoBehaviour
     public bool color;
     public GameObject bnw;
     public Vector3 offset;
+    public float destroy = 6f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class basicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(this.gameObject, 6f);
+        Destroy(this.gameObject, destroy);
     }
 
     public void OnTriggerEnter2D(Collider2D other){

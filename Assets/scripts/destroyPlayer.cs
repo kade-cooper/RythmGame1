@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class destroyPlayer : MonoBehaviour
 {
+    public GameObject bnw;
+    public bool color;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,8 @@ public class destroyPlayer : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             this.gameObject.SetActive(false);
             other.gameObject.SendMessage("Respawn");
+            if(!color){bnw.SetActive(true);}
+                else{bnw.SetActive(false);}
             //Destroy(other.gameObject);
         }
     }
