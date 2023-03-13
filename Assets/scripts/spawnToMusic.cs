@@ -42,7 +42,7 @@ public class spawnToMusic : MonoBehaviour
 
 			clipLoudness *= sizeFactor;
 			clipLoudness = Mathf.Clamp(clipLoudness, 0, maxSize);
-			Debug.Log(clipLoudness);
+			//Debug.Log(clipLoudness);
             if(clipLoudness>=volumeToSpawn){
 				int rand = Random.Range(0,enemies.Length);
                 Instantiate(enemies[rand],this.transform.position,Quaternion.Euler(0,-110,0));
