@@ -2760,7 +2760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5724882045160034514, guid: e1bc772b61700d24a87a8dc5eb0f4448, type: 3}
       propertyPath: health
-      value: 1e+11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5724882045160034514, guid: e1bc772b61700d24a87a8dc5eb0f4448, type: 3}
       propertyPath: scoreTxt
@@ -2772,7 +2772,7 @@ PrefabInstance:
       objectReference: {fileID: 291501146}
     - target: {fileID: 5724882045160034514, guid: e1bc772b61700d24a87a8dc5eb0f4448, type: 3}
       propertyPath: maxhealth
-      value: 1e+10
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5724882045160034514, guid: e1bc772b61700d24a87a8dc5eb0f4448, type: 3}
       propertyPath: jumpHeight
