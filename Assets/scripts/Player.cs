@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public GameObject swordPrefab;
     private Animator animator;
     public TextMeshProUGUI scoreTxt;
+    public TextMeshProUGUI otherscoreTxt;
     private int score;
     public float health;
     public float maxhealth;
@@ -67,12 +68,14 @@ public class Player : MonoBehaviour
         //Debug.Log("i run");
         score+=addition;
         scoreTxt.text = "Score: " + score.ToString();
+        otherscoreTxt.text = score.ToString();
     }
 
     public void SubScore(){
         //Debug.Log("i run");
         score-=300;
         scoreTxt.text = "Score: " + score.ToString();
+        otherscoreTxt.text = score.ToString();
     }
 
     public void Respawn(){
